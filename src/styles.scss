@@ -18,3 +18,25 @@ body{
     line-height: 1.5;
     overflow-x: hidden;
 }
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+.hide-sm-icon{
+    display: none;
+}
+@media (min-width: 768px){
+    .hide-sm-icon{
+        display: inline-block;
+    }
+.col-md-3 {
+    width: 25%;
+}
+.col-md-9{
+    width: 75%;
+}}
