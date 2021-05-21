@@ -12,7 +12,6 @@
     flex-wrap: inherit;
     align-items: center;
     justify-content: flex-start;
-    max-width: 1320px;
   }
   .navbar-brand {
     padding-left: 2rem;
@@ -84,7 +83,7 @@
     border: 2px solid var(--color-header-bg);
     border-radius: 50%;
   }
-  
+
   .profile-icon {
     width: 20px;
     height: 20px;
@@ -96,144 +95,145 @@
   }
 }
 
-.tabs{
+.tabs {
   display: flex;
   justify-content: flex-start;
   position: sticky;
   top: 0;
   background-color: #fff;
-  nav{
+  nav {
     display: block;
     flex: 2;
   }
   .nav-tabs {
     border-bottom: 1px solid #eee;
     padding: 1rem 1rem;
-}
-.nav-link{
+  }
+  .nav-link {
     padding: 1rem 1rem;
     text-decoration: none;
-}
-.nav-tabs .nav-link{
+  }
+  .nav-tabs .nav-link {
     margin-bottom: 0px !important;
     border: 0px;
     cursor: pointer;
-}
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {      
+  }
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-item.show .nav-link {
     // background-color: #fff;
     font-weight: 600;
     border-color: transparent transparent transparent;
     border-bottom: 2px solid #f9826c;
-    .octicon{
+    .octicon {
       fill: inherit;
     }
-}
-.nav-tabs .nav-link:not(.active):hover{
-  border-bottom: 2px solid #959da57a;
-}
-.octicon{
-  vertical-align: middle;
-  margin-right: 4px;
-  fill: #959da5;
-}
-.number-indicator{
-  display: inline-block;
-  min-width: 20px;
-  padding: 0 6px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 18px;
-  color: #24292e;
-  text-align: center;
-  background-color: #d1d5da80;
-  border: 1px solid transparent;
-  border-radius: 2em;
-  margin-left: 4px;
-}
+  }
+  .nav-tabs .nav-link:not(.active):hover {
+    border-bottom: 2px solid #959da57a;
+  }
+  .octicon {
+    vertical-align: middle;
+    margin-right: 4px;
+    fill: #959da5;
+  }
+  .number-indicator {
+    display: inline-block;
+    min-width: 20px;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #24292e;
+    text-align: center;
+    background-color: #d1d5da80;
+    border: 1px solid transparent;
+    border-radius: 2em;
+    margin-left: 4px;
+  }
 }
 
-.content{
+.content {
   padding: 0 2rem;
-  .col-md-3{
+  .col-md-3 {
     padding: 0 8px;
     width: calc(25% - 16px) !important;
   }
-  .col-md-9{
+  .col-md-9 {
     padding: 0 16px;
-      width: calc(75% - 32px) !important;
+    width: calc(75% - 32px) !important;
   }
-  .user-avatar{
+  .user-avatar {
     border-radius: 100%;
     position: relative;
     z-index: 990 !important;
     margin-top: -3rem;
   }
-  .fullname{
+  .fullname {
     font-size: 26px;
     line-height: 1.25;
     margin-bottom: 0;
     margin-top: 0.8rem;
     text-transform: capitalize;
   }
-  .username{
+  .username {
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
     line-height: 24px;
     color: #586069;
   }
-  .follow-btn{
+  .follow-btn {
     border-color: #1b1f2326;
     width: 100%;
     margin-top: 1rem;
   }
-  .bio{
+  .bio {
     font-size: 1rem;
   }
-  .profile-stat{
-    &:hover{
+  .profile-stat {
+    &:hover {
       color: #0366d6;
-      .octicon{
+      .octicon {
         fill: #0366d6;
       }
     }
-    .octicon{
+    .octicon {
       vertical-align: middle;
       margin-right: 4px;
       fill: #959da5;
     }
-    span:not(.dot){
+    span:not(.dot) {
       font-weight: 600;
       margin-right: 4px;
     }
   }
-  .dot{
+  .dot {
     margin: 0 4px;
   }
-  .overflow-hidden{
+  .overflow-hidden {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: flex;
     align-content: flex-end;
     margin: 0.2rem 0 !important;
-    .octicon{
+    .octicon {
       align-self: flex-end;
       margin-right: 4px;
       fill: #959da5;
     }
   }
-  .separator{
+  .separator {
     background: #e1e4e8;
     height: 1px;
     width: 100%;
     margin: 1rem 0;
   }
-  .profile-subheading{
+  .profile-subheading {
     font-size: 16px;
   }
-  .text-muted:hover{
-    color:#0366d6;
+  .text-muted:hover {
+    color: #0366d6;
   }
   .form-control {
     display: block;
@@ -253,44 +253,44 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     margin-right: 16px;
   }
-  .btn{
+  .btn {
     border-color: #e1e4e8;
     margin-right: 4px;
-    &:hover{
+    &:hover {
       background-color: #d1d5da80;
     }
   }
-  .repo-card{
+  .repo-card {
     width: 100%;
     margin-left: 0;
-    .repo-heading{
+    .repo-heading {
       font-size: 20px;
       font-weight: 600;
       color: #0366d6;
-      word-break: break-all!important;
+      word-break: break-all !important;
       margin: 0.8rem 0;
       cursor: pointer;
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
     }
-    .btn{
+    .btn {
       justify-self: flex-start;
       align-self: center;
       font-size: 12px;
       padding: 3px 12px;
       display: flex;
       // width: 100%;
-      .octicon{
+      .octicon {
         margin-right: 4px;
         fill: #959da5;
       }
     }
-    .repo-data{
+    .repo-data {
       display: flex;
       justify-content: center;
       margin-right: 16px;
-      .octicon{
+      .octicon {
         // align-self: flex-end;
         margin-right: 4px;
         fill: currentColor;
@@ -304,10 +304,61 @@
       height: 13px;
       border-radius: 50%;
       margin-right: 4px;
+    }
   }
+  .btn-group {
+    .btn:first-child {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      margin-right: 0px;
+      border-right: 0px;
+    }
+    .btn:last-child {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      margin-left: 0px;
+    }
+    .btn {
+      color: #0366d6;
+      &:hover {
+        background-color: #0366d6;
+        color: #fff;
+      }
+      &:disabled {
+        color: #0366d680;
+        background-color: #fafbfc;
+        cursor: default;
+      }
+    }
   }
 }
-
+.footer {
+  padding-top: 1rem;
+  ul {
+    list-style: none;
+    font-size: 12px;
+    padding-inline-start: 0;
+    .mr-1 {
+      margin-right: 2.5rem;
+    }
+  }
+  .footer-octicon {
+    align-self: flex-end;
+  }
+  a {
+    text-decoration: none;
+    color: #0366d6;
+  }
+  .mb-2 {
+    margin-bottom: 2rem;
+  }
+  .octicon {
+    fill: #d1d5da;
+    &:hover {
+      fill: #586069;
+    }
+  }
+}
 .dropdown-caret {
   display: inline-block;
   width: 0;
@@ -321,9 +372,12 @@
   border-left: 4px solid transparent;
   margin-left: 0.4rem;
 }
-.separator{
+.separator {
   background: #e1e4e8;
   height: 1px;
   width: 100%;
   margin: 1rem 0;
+}
+.container {
+  max-width: 1320px;
 }
