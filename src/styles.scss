@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    --bs-gutter-x: 1.5rem;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-right: auto;
+    margin-left: auto;
+}
+.ml-auto{
+    margin-left: auto !important;
+}
+.d-flex{
+    display: flex;
+}
+body{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
