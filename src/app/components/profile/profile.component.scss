@@ -1,93 +1,12 @@
-// nav {
-//   .fixed-top {
-//     z-index: 990;
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     left: 0;
-//   }
-//   .bg-primary {
-//     background-color: #14213d !important;
-//   }
-//   .navbar {
-//     position: relative;
-//     display: flex !important;
-//     flex-wrap: wrap;
-//     align-items: center;
-//     justify-content: space-between;
-//     padding-top: 0.5rem;
-//     padding-bottom: 0.5rem;
-//   }
-//   .navbar-dark .navbar-toggler {
-//     color: rgba(255, 255, 255, 0.55);
-//     border-color: rgba(255, 255, 255, 0.1);
-// }
-// .navbar-toggler {
-//     padding: 0.25rem 0.75rem;
-//     font-size: 1.25rem;
-//     line-height: 1;
-//     background-color: transparent;
-//     border: 1px solid transparent;
-//     border-radius: 0.25rem;
-//     transition: box-shadow 0.15s ease-in-out;
-// }
-// }
-
-// nav .container{
-//   display: flex;
-//   flex-wrap: wrap;
-//   padding-left: 0;
-//   margin-bottom: 0;
-//   list-style: none;
-// }
-
-// .nav-link {
-//   display: block;
-//   padding: 0.5rem 1rem;
-//   // @include font-size($nav-link-font-size);
-//   // font-weight: $nav-link-font-weight;
-//   // color: $nav-link-color;
-//   // text-decoration: if($link-decoration == none, null, none);
-//   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-//     border-color 0.15s ease-in-out;
-
-//   &:hover,
-//   &:focus {
-//     //   color: $nav-link-hover-color;
-//     //   text-decoration: if($link-hover-decoration == underline, none, null);
-//   }
-
-//   // Disabled state lightens text
-//   &.disabled {
-//     //   color: $nav-link-disabled-color;
-//     pointer-events: none;
-//     cursor: default;
-//   }
-// }
-
-// @media (min-width: 992px) {
-//   .navbar-expand-lg {
-//     flex-wrap: nowrap;
-//     justify-content: flex-start;
-//   }
-// }
-
-// @media (min-width: 992px){
-// .navbar-expand-lg .navbar-toggler {
-//     display: none;
-// }}
-
 .navbar {
   background-color: #24292e;
   width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
   z-index: 990;
   color: #fff;
   display: flex;
   justify-content: center;
   padding: 0.3rem 0;
+  margin: 0;
   .container {
     display: flex;
     flex-wrap: inherit;
@@ -190,7 +109,7 @@
 }
 
 .tabs{
-  margin-top: 5.6rem;
+  margin-top: 1.6rem;
   display: flex;
   justify-content: flex-start;
   nav{
@@ -241,4 +160,71 @@
   border-radius: 2em;
   margin-left: 4px;
 }
+}
+
+.content{
+  padding: 0 2rem;
+  .col-md-3{
+    padding: 0 8px;
+  }
+  .user-avatar{
+    border-radius: 100%;
+    z-index: 4;
+    margin-top: -3rem;
+  }
+  .fullname{
+    font-size: 26px;
+    line-height: 1.25;
+    margin-bottom: 0;
+    margin-top: 0.8rem;
+    text-transform: capitalize;
+  }
+  .username{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #586069;
+  }
+  .follow-btn{
+    border-color: #1b1f2326;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .bio{
+    font-size: 1rem;
+  }
+  .profile-stat{
+    &:hover{
+      color: #0366d6;
+      .octicon{
+        fill: #0366d6;
+      }
+    }
+    .octicon{
+      vertical-align: middle;
+      margin-right: 4px;
+      fill: #959da5;
+    }
+    span:not(.dot){
+      font-weight: 600;
+      margin-right: 4px;
+    }
+  }
+  .dot{
+    margin: 0 4px;
+  }
+  .overflow-hidden{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    align-content: flex-end;
+    margin: 0.2rem 0 !important;
+    .octicon{
+      align-self: flex-end;
+      margin-right: 4px;
+      fill: #959da5;
+    }
+  }
 }
