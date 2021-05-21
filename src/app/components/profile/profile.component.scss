@@ -97,9 +97,11 @@
 }
 
 .tabs{
-  margin-top: 1.6rem;
   display: flex;
   justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
   nav{
     display: block;
     flex: 2;
@@ -162,7 +164,8 @@
   }
   .user-avatar{
     border-radius: 100%;
-    z-index: 4;
+    position: relative;
+    z-index: 990 !important;
     margin-top: -3rem;
   }
   .fullname{
@@ -266,6 +269,7 @@
       color: #0366d6;
       word-break: break-all!important;
       margin: 0.8rem 0;
+      cursor: pointer;
       &:hover{
         text-decoration: underline;
       }
@@ -293,7 +297,6 @@
       }
     }
     .language-color {
-      position: relative;
       background-color: red;
       top: 1px;
       display: inline-block;
