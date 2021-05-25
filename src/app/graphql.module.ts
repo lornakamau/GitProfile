@@ -8,17 +8,22 @@ import {environment as env} from '../secrets';
 const uri = 'https://api.github.com/graphql'; 
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+  const basic = setContext((operation, context) => ({
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }));
 
   const auth = setContext((operation, context) => ({
     headers: {
-      Authorization: `bearer ${env.TOKEN}`
+      Authorization: `Bearer ${env.TOKEN}`
     },
   }));
-  const link = ApolloLink.from([auth, httpLink.create({ uri })]);
-
+  const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
+  const cache = new InMemoryCache();
   return {
     link,
-    cache: new InMemoryCache(),
+    cache,
   };
 }
 
