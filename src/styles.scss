@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .container,
 .container-fluid,
 .container-xxl,
@@ -6,7 +11,7 @@
 .container-md,
 .container-sm {
   --bs-gutter-x: 1.5rem;
-  width: 100%;
+  width: 100% !important;
   padding-right: calc(var(--bs-gutter-x) / 2);
   padding-left: calc(var(--bs-gutter-x) / 2);
   margin-right: auto;
@@ -18,16 +23,21 @@
 .d-flex {
   display: flex;
 }
-.flex-wrap{
-    flex-wrap: wrap;
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-wrap-nowrap{
+  flex-wrap: nowrap;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-size: 14px;
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   margin: 0;
+  //   width: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 .row {
   --bs-gutter-x: 1.5rem;
@@ -65,40 +75,47 @@ h1 {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.mb-0{
-    margin-bottom: 0;
+.mb-0 {
+  margin-bottom: 0;
 }
 .mb-2 {
   margin-bottom: 2rem;
 }
-.mt-1{
-    margin-top: 1rem;
+.mt-1 {
+  margin-top: 1rem;
 }
 .text-muted {
   color: #586069;
 }
-.justify-content-between{
-    justify-content: space-between !important;
-  }
-  .justify-content-around{
-      justify-content: space-around;
-  }
-  .flex-column{
-      flex-direction: column;
-  }
-.align-content-center{
-    align-content: center !important;
+.justify-content-between {
+  justify-content: space-between !important;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+.align-content-center {
+  align-content: center !important;
 }
 .col-10 {
-    width: 83.33333%;
+  width: 83.33333%;
 }
-.col-2{
-    width: 16.66667%;
+.col-2 {
+  width: 16.66667%;
 }
-.text-secondary{
-    color: #586069;
-  }
+.text-secondary {
+  color: #586069;
+}
+
 @media (min-width: 768px) {
+  .flex-column-md{
+    flex-direction: column;
+  }
   .hide-sm-icon {
     display: inline-block;
   }
@@ -107,5 +124,23 @@ h1 {
   }
   .col-md-9 {
     width: 75%;
+  }
+  .hide-md{
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .flex-row-sm{
+    flex-direction: row;
+  }
+  .col-md-3 {
+    width: 100% !important;
+  }
+  .col-md-9 {
+    width: 100% !important;
+  }
+  .hide-sm{
+    display: none !important;
   }
 }
