@@ -423,6 +423,9 @@
   .p-sm-1{
     padding: 0 1rem;
   }
+  .mt-sm-1{
+    margin-top: 0.5rem;
+  }
   .flex-order {
     display: flex;
     flex-direction: column;
@@ -470,6 +473,31 @@
     }
       .nav-link{
         flex-shrink: 0;
+      }
+    }
+  }
+  .repo-card{
+    .repo-data{
+      font-size: 12px;
+    }
+  }
+  .footer{
+    margin-bottom: 1.5rem;
+    .container{
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+    ul {
+      list-style: none;
+      font-size: 12px;
+      padding-inline-start: 0;
+      margin: 0 auto;
+      &:last-child{
+        margin-top: 0.5rem;
+      }
+      .mr-1 {
+        margin-right: 1rem;
       }
     }
   }
