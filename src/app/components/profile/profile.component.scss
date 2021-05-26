@@ -132,8 +132,9 @@
   }
   .octicon {
     vertical-align: middle;
-    margin-right: 4px;
+    margin-right: 5px;
     fill: #959da5;
+    align-self: center;
   }
   .number-indicator {
     display: inline-block;
@@ -456,6 +457,20 @@
       height: 6rem;
       object-fit: cover;
       margin-right: 1rem;
+    }
+  }
+  .tabs{
+    .tabs-container{
+      overflow-x: scroll !important;
+      width: 100%;
+      &::-webkit-scrollbar {
+        display: none !important;
+        width: 0px;
+        height: 0px !important;
+    }
+      .nav-link{
+        flex-shrink: 0;
+      }
     }
   }
 }

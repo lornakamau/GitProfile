@@ -48,9 +48,6 @@ body {
   margin-right: calc(var(--bs-gutter-x) / -2);
   margin-left: calc(var(--bs-gutter-x) / -2);
 }
-.hide-sm-icon {
-  display: none;
-}
 h1 {
   font-size: 32px;
   font-weight: 600;
@@ -115,9 +112,6 @@ h1 {
 @media (min-width: 768px) {
   .flex-column-md{
     flex-direction: column;
-  }
-  .hide-sm-icon {
-    display: inline-block;
   }
   .col-md-3 {
     width: 25%;
