@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { gql, Apollo } from 'apollo-angular';
+import { Title } from '@angular/platform-browser';
 
 const query_variables = {
   'token': `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`,
@@ -66,9 +67,14 @@ query {
 })
 export class ProfileComponent implements OnInit {
   user: any = [];
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo, private titleService: Title) { }
+
+  setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
 
   ngOnInit(): void {
+    this.setTitle("kitu")
 
     this.apollo.watchQuery<any>({
       query: userProfile
