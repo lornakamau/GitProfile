@@ -346,7 +346,7 @@
             <ng-container *ngIf="user.repositories">
               <div class="repo-card row p-sm-1" *ngFor="let repo of user.repositories.nodes">
                 <div class="col-10">
-                  <a [href]="repo.url"><h4 class="repo-heading">{{repo.name}}</h4></a>
+                  <a [href]="repo.url"><h4 class="repo-heading">{{repo.name}} </h4></a>
                   <p class="text-secondary" style="margin-right: 24px;">{{repo.description}}</p>
                   <div class="d-flex text-secondary flex-wrap">
                     <p class="repo-data mb-0" *ngIf="repo.languages && repo.languages.edges.length != 0">
