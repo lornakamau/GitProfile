@@ -23,7 +23,7 @@
   }
   .form-control {
     display: block;
-    // width: 100%;
+    width: 18rem;
     padding: 5px 12px;
     font-size: inherit;
     font-weight: 400;
@@ -31,15 +31,20 @@
     color: inherit;
     background-color: transparent;
     background-clip: padding-box;
-    border: 1px solid #e1e4e8;
+    border: 1px solid #b7b9bd85 !important;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border-radius: 0.35rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:focus{
+      border-radius: 0.35rem;
+    }
   }
   ul {
     padding-inline-start: 0px;
+    margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
   }
   .navbar-collapse {
     display: flex;
@@ -73,12 +78,12 @@
   }
   .notification-indicator .mail-status {
     position: absolute;
-    top: -6px;
-    left: 6px;
+    top: -5px;
+    left: 7px;
     z-index: 2;
     display: none;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     color: var(--color-text-white);
     background-image: linear-gradient(#54a3ff, #006eed);
     background-clip: padding-box;
@@ -217,6 +222,9 @@
     font-size: 1rem;
   }
   .profile-stat {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-end;
     &:hover {
       color: #0366d6;
       .octicon {
@@ -224,7 +232,8 @@
       }
     }
     .octicon {
-      vertical-align: middle;
+      // vertical-align: middle;
+      align-self: center;
       margin-right: 4px;
       fill: #959da5;
     }
@@ -379,6 +388,31 @@
     }
   }
 }
+.not-found{
+  height: 90vh;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  align-content: center;
+  flex-direction: column;
+  .octicon{
+    align-self: center;
+    margin-top: 2rem;
+  }
+  h2{
+    margin-bottom: 0;
+  }
+  p{
+    margin-top: 0;
+  }
+  a{
+    text-decoration: none;
+    color: #0366d6;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
 .footer {
   padding-top: 1rem;
   ul {
@@ -510,6 +544,7 @@
       height: 6rem;
       object-fit: cover;
       margin-right: 1rem;
+      box-shadow: 0 0 0 1px #00000000;
     }
   }
   .tabs{

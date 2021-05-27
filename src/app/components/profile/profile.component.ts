@@ -4,12 +4,15 @@ import { Title } from '@angular/platform-browser';
 
 const query_variables = {
   'token': `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`,
-  'username': 'ireade'
+  'username': 'lornakamauy'
 };
+"${query_variables['username']}"
 const userProfile = gql`
 query {
-  user(login: "${query_variables['username']}") {
-    name
+  search(query: "${query_variables['username']}", type: USER, first: 1) {
+    nodes {
+      ... on User {
+        name
     login
     bio
     avatarUrl
@@ -60,6 +63,8 @@ query {
         }
       }
     }
+      }
+    }
   }
 }
 `
@@ -69,9 +74,13 @@ query {
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  user: any = [];
+  user: any;
+  queryParam: any;
   loading: boolean = false;
-  constructor(private apollo: Apollo, private titleService: Title) { }
+  advancedSearchUrl: any;
+  constructor(private apollo: Apollo, private titleService: Title) {
+    this.advancedSearchUrl = `/search/advanced?q=${this.queryParam}`;
+   }
 
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
@@ -84,11 +93,11 @@ export class ProfileComponent implements OnInit {
       query: userProfile
     }).valueChanges
     .subscribe(({data, loading, error}) => {
-      // console.log(loading);
-      this.loading = loading;
-      this.user = data.user;
-      console.log(data);
-      // console.log(error);
+      console.log(loading);
+      // this.loading = loading;
+      // this.user = data.search.nodes[0];
+      console.log(typeof data.search.nodes[0], data.search.nodes[0]);
+      console.log(error);
     })
   }
 
