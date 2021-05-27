@@ -5,26 +5,58 @@ const query_variables = {
   'token': `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`,
   'username': 'lornakamau'
 };
-
 const userProfile = gql`
-query { 
-  user(login: "${query_variables['username']}")  
-  {
-    avatarUrl,
-    followers{
-      totalCount
-    },
-    following{
+query {
+  user(login: "${query_variables['username']}") {
+    name
+    login
+    bio
+    avatarUrl
+    followers {
       totalCount
     }
-    repositories(first: 30, ownerAffiliations: OWNER) {
-      totalCount,
+    following {
+      totalCount
+    }
+    starredRepositories {
+      totalCount
+    }
+    status {
+      emoji
+      message
+    }
+    company
+    location
+    websiteUrl
+    email
+    twitterUsername
+    organizations(first: 5) {
       nodes {
-        name,
-        
+        url
+        avatarUrl
       }
-    }    
-  } 
+    }
+    repositories(first: 20, ownerAffiliations: OWNER, orderBy: {field: PUSHED_AT, direction: DESC}, privacy: PUBLIC) {
+      totalCount
+      nodes {
+        name
+        description
+        forkCount
+        stargazerCount
+        updatedAt
+        url
+        languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
+          edges {
+            size
+            node {
+              color
+              name
+            }
+          }
+        }
+      }
+    }
+  }
 }
 `
 @Component({
