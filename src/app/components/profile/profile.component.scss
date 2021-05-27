@@ -605,7 +605,9 @@ $blue: #0366d6;
   position: sticky;
   top: 0;
 }
-
+.flex-nowrap-sm{
+  flex-wrap: nowrap !important;
+}
 //media queries
 @media only screen and (max-width: 768px) {
   .navbar{
@@ -615,6 +617,9 @@ $blue: #0366d6;
     justify-content: space-between;
     padding-top: .5rem;
     padding-bottom: .5rem;    
+  }
+  .navbar-brand{
+    padding-left: 0 !important;
   }
   .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
      display: flex;
@@ -628,6 +633,9 @@ $blue: #0366d6;
   .content{
     margin: 0;
     padding: 0;
+    .repo-top{
+      flex-direction: column;
+    }
   }
   .p-sm-1{
     padding: 0 1rem;

@@ -28,9 +28,9 @@
             id = "query"
           />
         </li>
-        <button (click)="search(query.value)" class="search-append">
+        <div (click)="search(query.value)" class="search-append">
           <i class="fa fa-search"></i>
-        </button>
+        </div>
         <li class="nav-item">Pull requests</li>
         <li class="nav-item">Issues</li>
         <li class="nav-item">Codespaces</li>
@@ -181,9 +181,9 @@
         placeholder="Search or jump to ..."
         #querysm
       />
-      <button (click)="search(querysm.value)" class="search-append">
+      <div (click)="search(querysm.value)" class="search-append">
         <i class="fa fa-search"></i>
-      </button>
+      </div>
     </li>
     <li class="nav-item">Dashboard</li>
     <li class="nav-item">Pull requests</li>
@@ -329,7 +329,7 @@
               </div>
             </nav>
           </div>
-             <div class="d-flex mt-1 justify-content-between flex-wrap flex-nowrap-sm">
+             <div class="d-flex mt-1 justify-content-between repo-top">
               <input
                 type="text"
                 class="form-control"
