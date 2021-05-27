@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { gql, Apollo } from 'apollo-angular';
 import { Title } from '@angular/platform-browser';
+import {User } from '../../../models/models';
 
 @Component({
   selector: 'app-profile',
@@ -14,8 +15,7 @@ export class ProfileComponent implements OnInit {
   intro: boolean = true;
   advancedSearchUrl: any;
   overlayMenu: boolean = false;
-  constructor(private apollo: Apollo, private titleService: Title) {
-   }
+  constructor(private apollo: Apollo, private titleService: Title) {}
 
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
@@ -27,53 +27,53 @@ export class ProfileComponent implements OnInit {
       search(query: "${param}", type: USER, first: 1) {
         nodes {
           ... on User {
-            name
-        login
-        bio
-        avatarUrl
-        followers {
-          totalCount
-        }
-        following {
-          totalCount
-        }
-        starredRepositories {
-          totalCount
-        }
-        company
-        location
-        websiteUrl
-        email
-        twitterUsername
-        organizations(first: 5) {
-          nodes {
-            url
-            avatarUrl
+          name
+          login
+          bio
+          avatarUrl
+          followers {
+            totalCount
           }
-        }
-        repositories(first: 20, ownerAffiliations: OWNER, orderBy: {field: PUSHED_AT, direction: DESC}, privacy: PUBLIC) {
-          totalCount
-          nodes {
-            name
-            description
-            forkCount
-            stargazerCount
-            updatedAt
-            url
-            languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
-              edges {
-                size
-                node {
-                  color
-                  name
+          following {
+            totalCount
+          }
+          starredRepositories {
+            totalCount
+          }
+          company
+          location
+          websiteUrl
+          email
+          twitterUsername
+          organizations(first: 5) {
+            nodes {
+              url
+              avatarUrl
+            }
+          }
+          repositories(first: 20, ownerAffiliations: OWNER, orderBy: {field: PUSHED_AT, direction: DESC}, privacy: PUBLIC) {
+            totalCount
+            nodes {
+              name
+              description
+              forkCount
+              stargazerCount
+              updatedAt
+              url
+              languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
+                edges {
+                  size
+                  node {
+                    color
+                    name
+                  }
                 }
               }
-            }
-            licenseInfo {
-              name
+              licenseInfo {
+                name
+              }
             }
           }
-        }
           }
         }
       }
@@ -99,6 +99,7 @@ export class ProfileComponent implements OnInit {
         }
       })
   }
+  
   search(event: any): void{
     this.queryApi(event);
     this.queryParam = event;
