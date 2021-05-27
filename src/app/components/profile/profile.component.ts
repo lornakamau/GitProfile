@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   loading: boolean = false;
   intro: boolean = true;
   advancedSearchUrl: any;
-
+  overlayMenu: boolean = false;
   constructor(private apollo: Apollo, private titleService: Title) {
     this.advancedSearchUrl = `/search/advanced?q=${this.queryParam}`;
    }
@@ -102,6 +102,7 @@ export class ProfileComponent implements OnInit {
     this.queryParam = event;
     this.loading = true;   
     this.intro = false; 
+    this.overlayMenu = false;
   }
   ngOnInit(): void {
   }
