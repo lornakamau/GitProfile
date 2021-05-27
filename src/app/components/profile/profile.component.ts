@@ -101,7 +101,6 @@ export class ProfileComponent implements OnInit {
   }
   
   search(event: any): void{
-    console.log(event)
     this.queryApi(event);
     this.queryParam = event;
     this.loading = true;   
