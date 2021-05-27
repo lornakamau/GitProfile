@@ -1,4 +1,4 @@
-[![codebeat badge](https://codebeat.co/badges/dcfe6f01-c3eb-400e-8875-78a84b9a0c79)](https://codebeat.co/projects/github-com-lornakamau-git-google-master)
+[![codebeat badge](https://codebeat.co/badges/478719a8-d230-4c74-933b-07e3bff39bcc)](https://codebeat.co/projects/github-com-lornakamau-github-profile-clone-master)
 # GitHubProfile
 #### A clone of GitHub's profile page , 27/05/2021.
 #### By Lorna Kamau
