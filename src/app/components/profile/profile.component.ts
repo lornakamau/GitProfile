@@ -67,6 +67,7 @@ query {
 })
 export class ProfileComponent implements OnInit {
   user: any = [];
+  loading: boolean = false;
   constructor(private apollo: Apollo, private titleService: Title) { }
 
   setTitle(newTitle: string) {
@@ -80,10 +81,11 @@ export class ProfileComponent implements OnInit {
       query: userProfile
     }).valueChanges
     .subscribe(({data, loading, error}) => {
-      console.log(loading);
-      console.log(data)
-      console.log(error)
-      // this.user = data;
+      // console.log(loading);
+      this.loading = loading;
+      this.user = data.user;
+      console.log(data);
+      // console.log(error);
     })
   }
 
