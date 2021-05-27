@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 
 const query_variables = {
   'token': `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`,
-  'username': 'lornakamau'
+  'username': 'ireade'
 };
 const userProfile = gql`
 query {
@@ -54,6 +54,9 @@ query {
               name
             }
           }
+        }
+        licenseInfo {
+          name
         }
       }
     }
