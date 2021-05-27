@@ -263,11 +263,13 @@
             <div class="separator"></div>
             <h4 class="profile-subheading">Highlights</h4>
             <img alt="Arctic Code Vault Contributor" width="64px" src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png">
-            <div class="separator"></div>
-            <h4 class="profile-subheading">Organizations</h4>
-            <img alt="Arctic Code Vault Contributor" width="64px" src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png">
+            <div *ngIf="user.organizations">
+              <div class="separator" *ngIf="user.organizations.nodes.length != 0"></div>
+              <h4 class="profile-subheading" *ngIf="user.organizations.nodes.length != 0">Organizations</h4>
+              <a *ngFor="let organization of user.organizations.nodes" [href]="organization.url"><img [src]="organization.avatarUrl" alt="organization avatar" size="32" data-view-component="true" height="32" width="32" class="org-avatar"></a>
             </div>
-            <div class="text-muted">Block or Report</div>
+            </div>
+            <div class="text-muted" style="margin-top: 0.6rem;">Block or Report</div>
         </div>
     </div>
     <div class="col-md-9">
