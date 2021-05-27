@@ -26,6 +26,7 @@
             placeholder="Search or jump to ..."
             #query
             id = "query"
+            (keyup.enter)="search(query.value)"
           />
         </li>
         <div (click)="search(query.value)" class="search-append">
@@ -180,6 +181,7 @@
         class="form-control"
         placeholder="Search or jump to ..."
         #querysm
+        (keyup.enter)="search(querysm.value)"
       />
       <div (click)="search(querysm.value)" class="search-append">
         <i class="fa fa-search"></i>
