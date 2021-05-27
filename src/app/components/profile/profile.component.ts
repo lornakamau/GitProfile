@@ -89,8 +89,9 @@ export class ProfileComponent implements OnInit {
       }).valueChanges
       .subscribe(({data, loading, error}) => {
         this.loading = loading;
-        this.user = data.search.nodes[0];
-        console.log(this.user)
+        if (data.search.nodes[0].__typename === 'User'){
+          this.user = data.search.nodes[0];
+        }
         if (this.user){
           this.setTitle(`${this.user.login} (${this.user.name})`);
         } else {
