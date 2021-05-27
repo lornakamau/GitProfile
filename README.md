@@ -13,7 +13,7 @@ While every other page functionality and style was cloned, the following feature
 ![landing](src/assets/images/landing.jpg)
 
 ## Live link
-Visit the application on https://lornakamau.github.io/git-google/ .
+Visit the application on https://githubprofile-7530a.web.app
 
 ## Development
 
