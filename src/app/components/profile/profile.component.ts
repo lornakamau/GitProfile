@@ -15,7 +15,6 @@ export class ProfileComponent implements OnInit {
   advancedSearchUrl: any;
   overlayMenu: boolean = false;
   constructor(private apollo: Apollo, private titleService: Title) {
-    this.advancedSearchUrl = `/search/advanced?q=${this.queryParam}`;
    }
 
   setTitle(newTitle: string) {
@@ -85,12 +84,15 @@ export class ProfileComponent implements OnInit {
       }).valueChanges
       .subscribe(({data, loading, error}) => {
         this.loading = loading;
-        if (data.search.nodes[0].__typename === 'User'){
+        if (data.search.nodes.length !=0 && data.search.nodes[0].__typename === 'User'){
           this.user = data.search.nodes[0];
+        } else {
+          this.user = null;
+          this.advancedSearchUrl = `https://github.com/search/advanced?q=${this.queryParam}`;
         }
-        if (this.user.login && this.user.name){
+        if (this.user && this.user.login && this.user.name){
           this.setTitle(`${this.user.login} (${this.user.name})`);
-        } else if (this.user.login && !this.user.name){
+        } else if (this.user && this.user.login && !this.user.name){
           this.setTitle(`${this.user.login}`);
         } else {
           this.setTitle("GitHub");
