@@ -11,7 +11,9 @@ export class ProfileComponent implements OnInit {
   user: any;
   queryParam: any;
   loading: boolean = false;
+  intro: boolean = true;
   advancedSearchUrl: any;
+
   constructor(private apollo: Apollo, private titleService: Title) {
     this.advancedSearchUrl = `/search/advanced?q=${this.queryParam}`;
    }
@@ -21,10 +23,6 @@ export class ProfileComponent implements OnInit {
   }
 
   queryApi(param: any): void{
-    const query_variables = {
-      'token': `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`,
-      'username': ''
-    };
     const userProfile = gql`
     query {
       search(query: "${param}", type: USER, first: 1) {
@@ -90,20 +88,23 @@ export class ProfileComponent implements OnInit {
         query: userProfile
       }).valueChanges
       .subscribe(({data, loading, error}) => {
-        console.log(loading);
         this.loading = loading;
         this.user = data.search.nodes[0];
-        console.log(typeof data.search.nodes[0], data.search.nodes[0]);
-        console.log(error);
+        console.log(this.user)
+        if (this.user){
+          this.setTitle(`${this.user.login} (${this.user.name})`);
+        } else {
+          this.setTitle("GitHub");
+        }
       })
   }
   search(event: any): void{
     this.queryApi(event);
     this.queryParam = event;
-    this.loading = true;    
+    this.loading = true;   
+    this.intro = false; 
   }
   ngOnInit(): void {
-    this.setTitle("kitu")
   }
 
 }

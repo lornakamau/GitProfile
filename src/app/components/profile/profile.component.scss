@@ -443,6 +443,12 @@
       to {transform: rotate(360deg);}
   }
 }
+.intro-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 60vh;
+}
 .footer {
   padding-top: 1rem;
   ul {
