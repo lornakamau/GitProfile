@@ -41,10 +41,6 @@ export class ProfileComponent implements OnInit {
         starredRepositories {
           totalCount
         }
-        status {
-          emoji
-          message
-        }
         company
         location
         websiteUrl
@@ -92,8 +88,10 @@ export class ProfileComponent implements OnInit {
         if (data.search.nodes[0].__typename === 'User'){
           this.user = data.search.nodes[0];
         }
-        if (this.user){
+        if (this.user.login && this.user.name){
           this.setTitle(`${this.user.login} (${this.user.name})`);
+        } else if (this.user.login && !this.user.name){
+          this.setTitle(`${this.user.login}`);
         } else {
           this.setTitle("GitHub");
         }

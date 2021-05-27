@@ -26,7 +26,9 @@
             #query
           />
         </li>
-        <button (click)="search(query.value)">submit</button>
+        <button (click)="search(query.value)" class="search-append">
+          <i class="fa fa-search"></i>
+        </button>
         <li class="nav-item">Pull requests</li>
         <li class="nav-item">Issues</li>
         <li class="nav-item">Codespaces</li>
