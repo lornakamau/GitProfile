@@ -3,8 +3,7 @@ import {APOLLO_OPTIONS} from 'apollo-angular';
 import {ApolloClientOptions, InMemoryCache, ApolloLink} from '@apollo/client/core';
 import {HttpLink} from 'apollo-angular/http';
 import { setContext } from '@apollo/client/link/context';
-import {environment as env} from '../secrets';
-
+const functions = require('firebase-functions');
 const uri = 'https://api.github.com/graphql'; 
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
@@ -16,7 +15,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 
   const auth = setContext((operation, context) => ({
     headers: {
-      Authorization: `Bearer ${env.TOKEN}`
+      Authorization: `Bearer ${functions.config().github.token}`
     },
   }));
   const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
