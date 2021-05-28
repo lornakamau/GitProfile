@@ -24,4 +24,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
