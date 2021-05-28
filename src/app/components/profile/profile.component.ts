@@ -101,11 +101,16 @@ export class ProfileComponent implements OnInit {
   }
   
   search(event: any): void{
-    this.queryApi(event);
-    this.queryParam = event;
-    this.loading = true;   
-    this.intro = false; 
-    this.overlayMenu = false;
+   
+    if (event.trim() == ""){
+      return
+    } else {
+      this.queryApi(event);
+      this.queryParam = event;
+      this.loading = true;   
+      this.intro = false; 
+      this.overlayMenu = false;
+    }
   }
   ngOnInit(): void {
   }
