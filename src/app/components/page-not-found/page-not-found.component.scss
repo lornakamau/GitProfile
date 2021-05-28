@@ -1,0 +1,23 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    .font-bold{
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    .octicon{
+        margin-top: 4rem;
+    }
+    a{
+        color: #0366d6;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
