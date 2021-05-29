@@ -13,7 +13,7 @@ While every other page functionality and style was cloned, the following feature
 ![landing](src/assets/images/landing.jpg)
 
 ## Live link
-Visit the application on https://gitprofile-b9e22.web.app
+Visit the application on https://githubprofile-c4d85.web.app
 
 ## Development
 
