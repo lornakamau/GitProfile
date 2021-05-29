@@ -330,7 +330,7 @@
               </div>
             </nav>
           </div>
-             <div class="d-flex mt-1 justify-content-between repo-top">
+             <div class="d-flex mt-1 justify-content-between repo-top" *ngIf="user.repositories.totalCount !== 0">
               <input
                 type="text"
                 class="form-control"
@@ -342,7 +342,7 @@
                 <button class="btn" style="background-color: #fafbfc;">Sort <div class="dropdown-caret"></div></button>
               </div>
             </div>
-            <div class="separator p-sm-2"></div>
+            <div class="separator p-sm-2" *ngIf="user.repositories.totalCount !== 0"></div>
             <ng-container *ngIf="user.repositories">
               <div class="repo-card row p-sm-1" *ngFor="let repo of user.repositories.nodes">
                 <div class="col-10">
@@ -379,7 +379,10 @@
                 <div class="separator" style="margin-top: 1.5rem;"></div>
               </div>
             </ng-container>
-            <div class="d-flex justify-content-center">
+            <ng-container *ngIf="user.repositories.totalCount === 0">
+              <p style="font-weight: 700; font-size: 1rem;margin-top: 4rem; text-align: center;">{{queryParam}} doesn’t have any public repositories yet.</p>
+            </ng-container>
+            <div class="d-flex justify-content-center" *ngIf="user.repositories.totalCount !== 0">
               <div class="btn-group">
                 <button class="btn disabled" disabled= "true">Previous</button>
                 <button class="btn no-action">Next</button>
