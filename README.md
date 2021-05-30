@@ -54,6 +54,12 @@ To make advancements/modifications, follow these steps:
 - Push to the branch (`git push origin improve-feature`)
 - Create a Pull Request 
 
+## Setup & Run instructions
+1. Clone the repository to your preferred directory (`git clone https://github.com/lornakamau/GitProfile.git`)
+2. In the src folder create a secrets.ts file that will contain the variables listed in the secrets-sample.ts file
+3. In your CLI run (`npm install`) to install all dependencies
+4. (`ng serve`) to run the project 
+
 ## Technologies Used
 
 [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
